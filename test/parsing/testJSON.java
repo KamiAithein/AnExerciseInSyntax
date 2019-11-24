@@ -10,7 +10,7 @@ public class testJSON {
     public void test1_json() {
         JSON js = new JSON("data/test1.json");
         assertEquals(
-                "[\"chaloopa\",  \"marshmellow\",  \"mimi\",  \"ideas\",  \"mall\",  \"potato\"]",
+                "[\"chaloopa\",  \"marshmellow\",  \"mimi\",  \"idea\",  \"mall\",  \"potato\"]",
                 js.getNouns().toString());
         assertEquals(
                 "[\"green\",  \"colorless\",  \"floofy\",  \"cute\",  \"white\",  \"weird\"]",

@@ -13,6 +13,7 @@ import sentence.Clause;
 import sentence.Sentence;
 import word.boundWord.Adjective;
 import word.boundWord.Article;
+import word.boundWord.BoundWord;
 import word.freeWord.noun.Noun;
 import word.freeWord.verb.IntransitiveVerb;
 import word.freeWord.verb.TransitiveVerb;
@@ -48,17 +49,33 @@ public class InputFileJSON implements InputFile {
         List<Noun> nouns = this.js.getNouns();
         List<Article> articles = this.js.getArticles();
         List<Adjective> adjectives = this.js.getAdjectives();
+        NounFragment themself = new NounFragment(new Noun("themself"));
         assert nouns.size() > 0 : "There must be nouns";
 
         List<NounFragment> nounFrags = new LinkedList<>();
         for (Noun n : nouns) {
             for (Article art : articles) {
+                NounFragment nounFragNoAdj = new NounFragment(n);
+                nounFrags.add(nounFragNoAdj);
                 for (Adjective adj : adjectives) {
                     NounFragment nounFrag = new NounFragment(n);
                     nounFrag.addBoundWord(art);
                     nounFrag.addBoundWord(adj);
                     nounFrags.add(nounFrag);
+                    /**
+                     * Create recursive n List bike lock function for adj number
+                     */
+                    for (Adjective adj2 : adjectives) {
+                        if (adj2 != adj) {
+                            NounFragment nounFrag2 = new NounFragment(n);
+                            nounFrag2.addBoundWord(art);
+                            nounFrag2.addBoundWord(adj);
+                            nounFrag2.addBoundWord(adj2);
+                            nounFrags.add(nounFrag2);
+                        }
+                    }
                 }
+
             }
         }
         /*
@@ -74,7 +91,16 @@ public class InputFileJSON implements InputFile {
                 TransitiveVerbFragment tvf = new TransitiveVerbFragment(tv,
                         nfObject);
                 for (NounFragment nfSubject : nounFrags) {
-                    clauses.add(new Clause(nfSubject, tvf));
+                    boolean contains = false;
+                    for (BoundWord bw : nfSubject.getModifiers()) {
+                        if (nfObject.getModifiers().contains(bw)) {
+                            contains = true;
+                        }
+                    }
+                    if (!contains) {
+                        clauses.add(new Clause(nfSubject, tvf));
+                    }
+
                 }
             }
         }
