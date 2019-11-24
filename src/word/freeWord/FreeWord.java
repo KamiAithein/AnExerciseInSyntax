@@ -21,8 +21,9 @@ public abstract class FreeWord extends Word {
      */
     public FreeWord(Type t, String word) {
         super(t, word);
-        assert (t == Type.NOUN || t == Type.VERB || t == Type.PREPOSITION) : ""
-                + "Tried to construct Free Word of invalid type.";
+        assert (t == Type.NOUN || t == Type.VERB || t == Type.PREPOSITION
+                || t == Type.CONJUNCTION) : ""
+                        + "Tried to construct Free Word of invalid type.";
     }
 
     /**

@@ -1,0 +1,10 @@
+{
+	"noun": ["chaloopa", "marshmellow", "mimi", "ideas", "mall", "potato"],
+	"intransitive": ["runs", "eats", "flies", "cries"],
+	"transitive": ["kills", "snorts", "smacks", "slaps", "loves"],
+	"adjective": ["green", "colorless", "floofy", "cute", "white", "weird"],
+	"preposition": ["in", "at", "by", "under", "through", "beside"],
+	"conjunction": ["while", "during", "and", "for"],
+	"articles": ["a", "the", "that"]
+
+}

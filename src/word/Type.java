@@ -1,4 +1,5 @@
 package word;
+
 /**
  * Type of word.
  *
@@ -9,6 +10,6 @@ public enum Type {
     /**
      * Types of words.
      */
-    VERB, NOUN, PREPOSITION, ADJECTIVE, ADVERB, ARTICLE;
+    VERB, NOUN, PREPOSITION, ADJECTIVE, ADVERB, ARTICLE, CONJUNCTION;
 
 }

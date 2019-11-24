@@ -12,7 +12,7 @@ import word.freeWord.FreeWord;
  * @author Koepcke.1
  *
  */
-abstract class Fragment {
+public abstract class Fragment {
     /**
      * The root of the fragment.
      */
@@ -29,7 +29,7 @@ abstract class Fragment {
      * @param word
      *            the word
      */
-    Fragment(FreeWord word) {
+    protected Fragment(FreeWord word) {
         this.baseWord = word;
         this.modifiers = new ArrayList<>();
     }
