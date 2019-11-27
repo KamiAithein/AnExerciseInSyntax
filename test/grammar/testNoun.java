@@ -3,8 +3,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import word.Type;
-import word.freeWord.noun.Noun;
+import grammar.word.Type;
+import grammar.word.freeWord.noun.Noun;
 
 public class testNoun {
 

@@ -3,9 +3,9 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import word.Type;
-import word.freeWord.verb.IntransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.word.Type;
+import grammar.word.freeWord.verb.IntransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 public class testVerb {
 

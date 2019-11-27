@@ -30,6 +30,7 @@ public class testJSON {
         assertEquals(
                 "[\"kills\",  \"snorts\",  \"smacks\",  \"slaps\",  \"loves\", \"runs\",  \"eats\",  \"flies\",  \"cries\"]",
                 js.getVerbs().toString());
+        assertEquals("ho", js.getAdverbs().toString());
 
     }
 }

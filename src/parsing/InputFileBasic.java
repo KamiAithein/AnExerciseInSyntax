@@ -2,7 +2,7 @@ package parsing;
 
 import java.util.List;
 
-import sentence.Sentence;
+import grammar.sentence.Sentence;
 
 /**
  * Parses a data file from a list of text file.

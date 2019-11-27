@@ -6,17 +6,18 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
-import fragment.noun.NounFragment;
-import fragment.verb.IntransitiveVerbFragment;
-import fragment.verb.TransitiveVerbFragment;
-import sentence.Clause;
-import sentence.Sentence;
-import word.boundWord.Adjective;
-import word.boundWord.Article;
-import word.boundWord.BoundWord;
-import word.freeWord.noun.Noun;
-import word.freeWord.verb.IntransitiveVerb;
-import word.freeWord.verb.TransitiveVerb;
+import grammar.fragment.noun.NounFragment;
+import grammar.fragment.verb.IntransitiveVerbFragment;
+import grammar.fragment.verb.TransitiveVerbFragment;
+import grammar.sentence.Clause;
+import grammar.sentence.Sentence;
+import grammar.word.boundWord.Adjective;
+import grammar.word.boundWord.Adverb;
+import grammar.word.boundWord.Article;
+import grammar.word.boundWord.BoundWord;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.verb.IntransitiveVerb;
+import grammar.word.freeWord.verb.TransitiveVerb;
 
 /**
  * Parses a JSON file.
@@ -49,6 +50,7 @@ public class InputFileJSON implements InputFile {
         List<Noun> nouns = this.js.getNouns();
         List<Article> articles = this.js.getArticles();
         List<Adjective> adjectives = this.js.getAdjectives();
+        List<Adverb> adverbs = this.js.getAdverbs();
         NounFragment themself = new NounFragment(new Noun("themself"));
         assert nouns.size() > 0 : "There must be nouns";
 
@@ -88,20 +90,26 @@ public class InputFileJSON implements InputFile {
         List<TransitiveVerb> transVerbs = this.js.getTransitiveVerbs();
         for (TransitiveVerb tv : transVerbs) {
             for (NounFragment nfObject : nounFrags) {
-                TransitiveVerbFragment tvf = new TransitiveVerbFragment(tv,
-                        nfObject);
-                for (NounFragment nfSubject : nounFrags) {
-                    boolean contains = false;
-                    for (BoundWord bw : nfSubject.getModifiers()) {
-                        if (nfObject.getModifiers().contains(bw)) {
-                            contains = true;
+                for (Adverb adv : adverbs) {
+                    TransitiveVerbFragment tvf = new TransitiveVerbFragment(tv,
+                            nfObject);
+                    tvf.addBoundWord(adv);
+                    for (NounFragment nfSubject : nounFrags) {
+                        boolean containsSubj = false;
+                        for (BoundWord bw : nfSubject.getModifiers()) {
+                            if (nfObject.getModifiers().contains(bw)) {
+                                containsSubj = true;
+                            }
                         }
-                    }
-                    if (!contains) {
-                        clauses.add(new Clause(nfSubject, tvf));
-                    }
 
+                        if (!containsSubj && !nfSubject.getBaseWord()
+                                .equals(nfObject.getBaseWord())) {
+                            clauses.add(new Clause(nfSubject, tvf));
+                        }
+
+                    }
                 }
+
             }
         }
 
@@ -111,8 +119,13 @@ public class InputFileJSON implements InputFile {
         List<IntransitiveVerb> intransVerbs = this.js.getIntransitiveVerbs();
         for (IntransitiveVerb iv : intransVerbs) {
             for (NounFragment nfSubject : nounFrags) {
-                IntransitiveVerbFragment ivf = new IntransitiveVerbFragment(iv);
-                clauses.add(new Clause(nfSubject, ivf));
+                for (Adverb adv : adverbs) {
+                    IntransitiveVerbFragment ivf = new IntransitiveVerbFragment(
+                            iv);
+                    ivf.addBoundWord(adv);
+                    clauses.add(new Clause(nfSubject, ivf));
+                }
+
             }
         }
         /*

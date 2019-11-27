@@ -3,19 +3,19 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fragment.conjunction.ConjunctiveFragment;
-import fragment.noun.NounFragment;
-import fragment.preposition.PrepositionalFragment;
-import fragment.verb.IntransitiveVerbFragment;
-import fragment.verb.TransitiveVerbFragment;
-import sentence.Clause;
-import sentence.Sentence;
-import word.boundWord.Article;
-import word.freeWord.conjunction.Conjunction;
-import word.freeWord.noun.Noun;
-import word.freeWord.preposition.Preposition;
-import word.freeWord.verb.IntransitiveVerb;
-import word.freeWord.verb.TransitiveVerb;
+import grammar.fragment.conjunction.ConjunctiveFragment;
+import grammar.fragment.noun.NounFragment;
+import grammar.fragment.preposition.PrepositionalFragment;
+import grammar.fragment.verb.IntransitiveVerbFragment;
+import grammar.fragment.verb.TransitiveVerbFragment;
+import grammar.sentence.Clause;
+import grammar.sentence.Sentence;
+import grammar.word.boundWord.Article;
+import grammar.word.freeWord.conjunction.Conjunction;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.preposition.Preposition;
+import grammar.word.freeWord.verb.IntransitiveVerb;
+import grammar.word.freeWord.verb.TransitiveVerb;
 
 public class testSentence {
 

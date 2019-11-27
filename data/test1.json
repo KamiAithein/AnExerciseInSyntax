@@ -3,8 +3,9 @@
 	"intransitive": ["runs", "eats", "flies", "cries"],
 	"transitive": ["kills", "snorts", "smacks", "slaps", "loves"],
 	"adjective": ["green", "colorless", "floofy", "cute", "white", "weird"],
+	"adverb": ["happily", "angrily", "furiously", "vapidly", "titillatingly"],
 	"preposition": ["in", "at", "by", "under", "through", "beside"],
 	"conjunction": ["while", "during", "and", "for"],
-	"articles": ["a", "the", "that"]
+	"article": ["a", "the", "that"]
 
 }

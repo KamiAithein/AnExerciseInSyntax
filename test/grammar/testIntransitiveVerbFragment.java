@@ -5,11 +5,11 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import fragment.verb.IntransitiveVerbFragment;
-import word.boundWord.Adjective;
-import word.boundWord.Adverb;
-import word.freeWord.verb.IntransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.fragment.verb.IntransitiveVerbFragment;
+import grammar.word.boundWord.Adjective;
+import grammar.word.boundWord.Adverb;
+import grammar.word.freeWord.verb.IntransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 public class testIntransitiveVerbFragment {
 

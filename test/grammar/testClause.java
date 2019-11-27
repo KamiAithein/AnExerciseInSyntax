@@ -3,17 +3,17 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import fragment.noun.NounFragment;
-import fragment.preposition.PrepositionalFragment;
-import fragment.verb.TransitiveVerbFragment;
-import sentence.Clause;
-import word.boundWord.Adjective;
-import word.boundWord.Adverb;
-import word.boundWord.Article;
-import word.freeWord.noun.Noun;
-import word.freeWord.preposition.Preposition;
-import word.freeWord.verb.TransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.fragment.noun.NounFragment;
+import grammar.fragment.preposition.PrepositionalFragment;
+import grammar.fragment.verb.TransitiveVerbFragment;
+import grammar.sentence.Clause;
+import grammar.word.boundWord.Adjective;
+import grammar.word.boundWord.Adverb;
+import grammar.word.boundWord.Article;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.preposition.Preposition;
+import grammar.word.freeWord.verb.TransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 public class testClause {
 

@@ -2,7 +2,7 @@ package parsing;
 
 import java.util.List;
 
-import sentence.Sentence;
+import grammar.sentence.Sentence;
 
 /**
  * Interface describing the functions of a basic inputFile.

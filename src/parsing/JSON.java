@@ -3,18 +3,20 @@ package parsing;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import word.boundWord.Adjective;
-import word.boundWord.Article;
-import word.freeWord.conjunction.Conjunction;
-import word.freeWord.noun.Noun;
-import word.freeWord.preposition.Preposition;
-import word.freeWord.verb.IntransitiveVerb;
-import word.freeWord.verb.TransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.word.boundWord.Adjective;
+import grammar.word.boundWord.Adverb;
+import grammar.word.boundWord.Article;
+import grammar.word.freeWord.conjunction.Conjunction;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.preposition.Preposition;
+import grammar.word.freeWord.verb.IntransitiveVerb;
+import grammar.word.freeWord.verb.TransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 /**
  * An object representation of a JSON.
@@ -56,6 +58,8 @@ public class JSON {
      */
     private LinkedList<Article> articles;
 
+    private LinkedList<Adverb> adverbs;
+
     /**
      * Tries to construct a JSON representation from a file URL. If the file
      * does not exist then it tries to construct a JSON from the string
@@ -73,6 +77,7 @@ public class JSON {
         this.prepositions = new LinkedList<>();
         this.transitiveVerbs = new LinkedList<>();
         this.verbs = new LinkedList<>();
+        this.adverbs = new LinkedList<>();
         File f = new File(fileName);
         Scanner s;
         try {
@@ -126,8 +131,11 @@ public class JSON {
                     case "conjunction":
                         this.conjunctions.add(new Conjunction(str));
                         break;
-                    case "articles":
+                    case "article":
                         this.articles.add(new Article(str));
+                        break;
+                    case "adverb":
+                        this.adverbs.add(new Adverb(str));
                         break;
                     default:
                         throw new IllegalArgumentException();
@@ -198,6 +206,13 @@ public class JSON {
      */
     public LinkedList<Article> getArticles() {
         return this.articles;
+    }
+
+    /**
+     * @return the adverbs
+     */
+    public List<Adverb> getAdverbs() {
+        return this.adverbs;
     }
 
 }

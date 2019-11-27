@@ -5,14 +5,14 @@ import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-import fragment.noun.NounFragment;
-import fragment.verb.TransitiveVerbFragment;
-import word.boundWord.Adjective;
-import word.boundWord.Adverb;
-import word.boundWord.Article;
-import word.freeWord.noun.Noun;
-import word.freeWord.verb.TransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.fragment.noun.NounFragment;
+import grammar.fragment.verb.TransitiveVerbFragment;
+import grammar.word.boundWord.Adjective;
+import grammar.word.boundWord.Adverb;
+import grammar.word.boundWord.Article;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.verb.TransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 public class testTransitiveVerbFragment {
 

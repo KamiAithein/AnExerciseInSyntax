@@ -4,17 +4,17 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import fragment.noun.NounFragment;
-import fragment.verb.SententialVerbFragment;
-import fragment.verb.TransitiveVerbFragment;
-import fragment.verb.VerbFragment;
-import sentence.Clause;
-import word.boundWord.Adverb;
-import word.boundWord.Article;
-import word.freeWord.noun.Noun;
-import word.freeWord.verb.SententialVerb;
-import word.freeWord.verb.TransitiveVerb;
-import word.freeWord.verb.Verb;
+import grammar.fragment.noun.NounFragment;
+import grammar.fragment.verb.SententialVerbFragment;
+import grammar.fragment.verb.TransitiveVerbFragment;
+import grammar.fragment.verb.VerbFragment;
+import grammar.sentence.Clause;
+import grammar.word.boundWord.Adverb;
+import grammar.word.boundWord.Article;
+import grammar.word.freeWord.noun.Noun;
+import grammar.word.freeWord.verb.SententialVerb;
+import grammar.word.freeWord.verb.TransitiveVerb;
+import grammar.word.freeWord.verb.Verb;
 
 public class testSententialVerbFragment {
 
