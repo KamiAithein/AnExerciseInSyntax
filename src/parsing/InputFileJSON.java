@@ -58,6 +58,7 @@ public class InputFileJSON implements InputFile {
         for (Noun n : nouns) {
             for (Article art : articles) {
                 NounFragment nounFragNoAdj = new NounFragment(n);
+                nounFragNoAdj.addBoundWord(art);
                 nounFrags.add(nounFragNoAdj);
                 for (Adjective adj : adjectives) {
                     NounFragment nounFrag = new NounFragment(n);

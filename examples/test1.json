@@ -1,0 +1,11 @@
+{
+	"noun": ["chaloopa", "marshmellow", "idea", "potato"],
+	"intransitive": ["eats", "flies", "cries"],
+	"transitive": ["kills", "snorts", "smacks", "slaps", "loves"],
+	"adjective": ["green", "colorless", "floofy", "cute", "white", "weird"],
+	"adverb": ["happily", "angrily", "furiously", "vapidly", "titillatingly"],
+	"preposition": ["in", "at", "by", "under", "through", "beside"],
+	"conjunction": ["while", "during", "and", "for"],
+	"article": ["the", "that"]
+
+}
